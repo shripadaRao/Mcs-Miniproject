@@ -1,7 +1,8 @@
 import pyrebase
 from flask import Flask
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 config = {
 
   "apiKey": "AIzaSyBivBS2AG5ddQN5mX9fXHC8kHnN9bbc50Q",
