@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useState } from "react";
+import { useRef } from "react";
 
 function DisplayText() {
   const [details, setDetails] = useState({
@@ -13,7 +14,7 @@ function DisplayText() {
 
     const { textContent } = details;
 
-    const res = await fetch(
+    await fetch(
       "https://mcs-miniproject-default-rtdb.firebaseio.com/display.json",
       {
         method: "POST",
@@ -26,27 +27,44 @@ function DisplayText() {
       }
     );
   };
+  function Post() {
+    return PostData;
+  }
+
+  const ref = useRef(null);
+
+  function ClearInput() {
+    const handleClick = () => {
+      ref.current.value = "";
+    };
+    return handleClick;
+  }
+
+  // executeOnClick = ()=> {
+  //   Post();
+  //   ClearInput();
+  // }
+  // function alertFunc() {}
 
   return (
     <div>
-      <label
-        htmlFor="price"
-        className="block text-sm font-medium text-gray-700"
-      >
+      <label htmlFor="price">
         <h4>Display Text</h4>
       </label>
-      <div className="mt-1 relative rounded-md shadow-sm">
+      <div>
         <input
           type="text"
           name="price"
           id="price"
-          className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+          ref={ref}
           placeholder="Enter Text here"
           onChange={(e) =>
             setDetails({ ...details, textContent: e.target.value })
           }
         />
-        <button onClick={PostData}>Submit</button>
+        <button className="button1" type="button" onClick={Post()}>
+          Submit
+        </button>
       </div>
     </div>
   );

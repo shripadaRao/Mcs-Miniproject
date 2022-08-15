@@ -43,3 +43,34 @@
   width: 100vw;
   justify-content: center;
 }
+
+.Applications {
+  display: flex;
+  padding-left: 30px;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  height: 33px;
+  width: 80px;
+  border: 3px solid #2684a4;
+  /* border: 2px solid #008cba;   */
+}
+
+.button1:hover {
+  background-color: #2684a4;
+  color: white;
+}
+
+input[type="text"] {
+  padding: 0;
+  height: 30px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 2px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: white;
+  font-size: 16px;
+}

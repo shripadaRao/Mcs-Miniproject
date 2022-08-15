@@ -1,7 +1,5 @@
 import "./App.css";
-import ClockToggle from "./components/clock";
 import DisplayText from "./components/displayText";
-import Pomodoro from "./components/timer";
 
 function App() {
   return (
@@ -11,14 +9,12 @@ function App() {
           General Purpose Display
         </h1>
       </div>
-      <h3>Applications</h3>
+      <div className="Applications">
+        <h3>Applications</h3>
+      </div>
       <div className="wrapper">
         <DisplayText />
       </div>
-      <div className="wrapper">
-        <ClockToggle />
-      </div>
-      <Pomodoro />
     </>
   );
 }
